@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tao Liu</title>
+<meta name="description" content="Tao Liu, M.S. student in robotics at Tohoku University. Contact-rich robot manipulation: visuo-tactile imitation learning, vision-language-action models and world-action models on real robots.">
+<meta property="og:title" content="Tao Liu">
+<meta property="og:description" content="Contact-rich robot manipulation: visuo-tactile imitation learning, VLA models and world-action models on real robots.">
+<meta property="og:image" content="https://theotaoliu.github.io/act-tactile-page/assets/img/main_image.jpg">
+<meta property="og:url" content="https://theotaoliu.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://theotaoliu.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129306;</text></svg>">
+<style>
+:root{
+  --bg:#ffffff; --bg-alt:#f6f7f9;
+  --fg:#1a1c1f; --fg-muted:#5b6169; --fg-faint:#868d96;
+  --rule:#e2e5e9; --rule-strong:#c9ced5;
+  --accent:#0b6b6b; --accent-soft:#e3f1f0;
+  --maxw:960px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#101215; --bg-alt:#171a1e;
+    --fg:#e8eaed; --fg-muted:#a8b0b9; --fg-faint:#7c848d;
+    --rule:#282d33; --rule-strong:#3a4149;
+    --accent:#4fbdb1; --accent-soft:#14302e;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- header ---------- */
+header{
+  padding:64px 0 44px; text-align:center;
+  border-bottom:1px solid var(--rule);
+  background:linear-gradient(180deg,var(--bg-alt),var(--bg));
+}
+h1{
+  font-family:var(--serif); font-weight:600; font-size:clamp(1.9rem,4.6vw,2.6rem);
+  line-height:1.2; letter-spacing:-0.01em; margin:0;
+}
+h1 .zh{font-family:var(--sans); font-weight:400; font-size:.55em; color:var(--fg-muted); margin-left:.4em}
+.affil{color:var(--fg-muted); font-size:.98rem; margin:14px 0 0}
+.affil a{color:inherit; border-bottom:1px solid var(--rule-strong)}
+.affil a:hover{color:var(--accent); border-bottom-color:var(--accent); text-decoration:none}
+.bio{max-width:40em; margin:22px auto 0; text-align:left}
+.links{margin:22px 0 0; font-size:.95rem}
+.links a{
+  display:inline-block; padding:6px 14px; border:1px solid var(--rule-strong);
+  border-radius:999px; color:var(--fg); background:var(--bg);
+}
+.links a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
+
+/* ---------- projects ---------- */
+section{padding:52px 0}
+h2{
+  font-family:var(--serif); font-size:1.6rem; font-weight:600;
+  margin:0 0 26px; letter-spacing:-.01em; text-align:center;
+}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px}
+.card{
+  display:flex; flex-direction:column; border:1px solid var(--rule);
+  border-radius:12px; overflow:hidden; background:var(--bg); color:var(--fg);
+  transition:border-color .15s, transform .15s;
+}
+.card:hover{border-color:var(--accent); transform:translateY(-2px); text-decoration:none}
+.card img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--bg-alt)}
+.card .body{padding:16px 18px 18px; display:flex; flex-direction:column; flex:1}
+.card .kind{font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--accent)}
+.card h3{font-family:var(--serif); font-size:1.12rem; font-weight:600; line-height:1.35; margin:6px 0 8px}
+.card p{margin:0; font-size:.94rem; color:var(--fg-muted); line-height:1.55}
+.card .meta{margin-top:auto; padding-top:12px; font-size:.86rem; color:var(--fg-faint)}
+
+footer{border-top:1px solid var(--rule); padding:26px 0 40px; text-align:center; font-size:.85rem; color:var(--fg-faint)}
+
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  header{padding:44px 0 34px}
+  section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Tao Liu<span class="zh">刘涛</span></h1>
+    <p class="affil">
+      M.S. student, <a href="https://neuro.mech.tohoku.ac.jp/">Neuro-Robotics Laboratory</a>,
+      Graduate School of Engineering, Tohoku University, Sendai, Japan
+    </p>
+    <p class="bio">
+      I work on contact-rich robot manipulation on real hardware: visuo-tactile imitation
+      learning, fine-tuning and deploying vision-language-action models such as π0.5, and
+      world-action models that predict touch. I build the whole pipeline myself, from the
+      robot platform and data collection to training and on-robot deployment.
+    </p>
+    <p class="links"><a href="https://github.com/theotaoliu">GitHub</a></p>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="grid">
+
+      <a class="card" href="https://theotaoliu.github.io/act-tactile-page/">
+        <img src="https://theotaoliu.github.io/act-tactile-page/assets/img/main_image.jpg" alt="Four-arm ALOHA platform with optical tactile sensors" loading="lazy">
+        <div class="body">
+          <span class="kind">Paper</span>
+          <h3>Do Robots Need All Tactile Signals? Evaluating Tactile Field Selection in Contact-rich Imitation Learning</h3>
+          <p>A controlled study of how tactile field selection governs visuo-tactile imitation learning on a four-arm ALOHA platform.</p>
+          <span class="meta">Tao Liu, Ningquan Gu, Mitsuhiro Hayashibe</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://theotaoliu.github.io/wipe-line-page/">
+        <img src="https://theotaoliu.github.io/wipe-line-page/media/wipe-line-poster.jpg" alt="Bimanual ALOHA wiping a hand-drawn line off a whiteboard" loading="lazy">
+        <div class="body">
+          <span class="kind">Video</span>
+          <h3>Wiping a hand-drawn line — π0.5 on a real ALOHA</h3>
+          <p>A person draws a line anywhere on a whiteboard; a LoRA fine-tuned π0.5 policy picks up the eraser, wipes the line off and puts the eraser back.</p>
+          <span class="meta">Five attempts, one uncut take, real hardware</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://theotaoliu.github.io/aloha2sim-page/">
+        <img src="https://theotaoliu.github.io/aloha2sim-page/media/task1-poster.jpg" alt="MuJoCo model of the lab ALOHA-2 workcell" loading="lazy">
+        <div class="body">
+          <span class="kind">Simulation</span>
+          <h3>aloha2sim — a MuJoCo twin of the lab ALOHA-2 workcell</h3>
+          <p>A MuJoCo model of the lab workcell running hidden-property pick-and-place, built so that RLinf can drive it for online RL fine-tuning of π0 / π0.5.</p>
+          <span class="meta">MuJoCo · RLinf · LeRobot</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Tao Liu</div>
+</footer>
+
+</body>
+</html>
